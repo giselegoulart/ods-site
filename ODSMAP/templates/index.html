@@ -1,0 +1,77 @@
+{%extends 'base.html' %}
+
+{% load static %}
+
+{%block title%}{%endblock%}
+
+{%block header%}
+
+    <!-- Header -->
+
+    <div class="header">
+        <div class="headerWrapper">
+            <h1 class="jumboClamp">ODS MAPEADOS</h1>
+            <p class="largeClamp lato">Uma ferramenta para análise do alinhamento de textos com a Agenda 2030.</p>
+            <a href="{% url 'mapeamento'%}" class="mediumClamp" role="button">Comece agora</a>
+        </div>
+    </div>
+
+{%endblock%}
+
+{%block content%}
+    <!-- Main content -->
+
+    <!-- Flex 0 - EVEN -->
+
+    <div class="contentEven">
+        <div class="contentRow">
+
+            <div class="twoThirds">
+                <h1 class="xlarge">O que é a ferramenta</h1>
+                <p class="lato medium">A ferramenta ODS Mapeados é um software que analisa o alinhamento de textos com os <a href="sobre-os-ODS.html" target="_self" class="reset lato medium inline">Objetivos de Desenvolvimento Sustentável (ODS) da ONU</a> de maneira automatizada.
+                </p>
+                <p class="lato lightText">A ferramenta utiliza <a href="https://pt.wikipedia.org/wiki/Processamento_de_linguagem_natural" target="_blank" class="reset lato lighText inline">processamento de linguagem natural</a> para manipular os textos enviados através da identificação neles de palavras-chave relacionadas aos 17 ODS da ONU.<br>Após o processamento do texto, é informado ao usuário a relação de alinhamento entre o texto e os Objetivos de Desenvolvimento Sustentável. <br>Além disso, é disponibilizada a opção de fazer download de uma tabela .csv que dispõe os resultados obtidos.
+                </p>
+                <a class="lato medium" href="sobre-a-ferramenta.html" target="_self">Saiba mais</a>
+            </div>
+
+            <div class="vl"></div>
+
+            <div class="hr"></div>
+
+            <div class="oneThird">
+                <img src="{% static 'img/Mandala_5P_Vetorizada_PNG_PB.png' %}" alt="imagem" class="imgMain w-100">
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Flex 1 - ODD -->
+
+    <div class="contentOdd">
+        <div class="contentRow">
+
+            <div class="oneThird">
+                <img src="{% static 'img/ODS-quadrado-colorido.png' %}" alt="Imagem" class="h-100">
+            </div>
+
+            <div class="vl"></div>
+
+            <div class="hr"></div>
+
+            <div class="twoThirds">
+                <h1 class="xlarge">Como é feita a análise</h1>
+                <p class="lato medium">
+                    A análise é feita comparando os textos enviados com a descrição das metas relacionadas aos <a href="sobre-os-ODS.html" target="_self" class="reset lato medium inline">Objetivos de Desenvolvimento Sustentável (ODS) da ONU</a>. Os ODS são os objetivos atrelados à Agenda 2030.
+                </p>
+                <p class="lato lightText">
+                    A Agenda 2030 para o Desenvolvimento Sustentável foi adotada em 2015.<br>
+                    Sua implementação teve o objetivo de dar continuidade e ampliar o escopo da Agenda de Desenvolvimento do Milênio.<br>
+                    Cada objetivo que compõe os ODS da Agenda 2030 possui suas respectivas metas e indicadores que servem o propósito de definir os meios necessários para sua execução e medir o progresso de sua implementação.
+                </p>
+                <a class="lato medium" href="sobre-os-ODS.html" target="_self">Saiba mais</a>
+            </div>
+
+        </div>
+    </div>
+{%endblock%}

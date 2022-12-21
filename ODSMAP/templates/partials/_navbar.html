@@ -1,0 +1,77 @@
+<!-- Nav Bar -->
+
+    <button id="dropButton" class="navLink medium">
+        <input type="checkbox" id="toggle">
+        <label for="toggle"></label>
+    </button>
+    <div class="nav" role="menu">
+        <ul class="navList">
+            <li class="navItem drop">
+                <a href="{% url 'index' %}" class="navLink {%if request.path == '/'%}current{%else%}nCurrent{%endif%} medium" role="menuitem">
+                    Home
+                </a>
+            </li>
+            <li class="navItem nCurrent drop">
+                <a href="{% url 'mapeamento' %}" class='navLink {%if "/mapeamento/" in request.path%}current{%else%}nCurrent{%endif%} medium' role="menuitem">
+                    Mapeamento
+                </a>
+            </li>
+            <li class="navItem nCurrent drop">
+                <a href="{% url 'sobre-ods' %}" class="navLink {%if '/sobre-os-ods/' in request.path%}current{%else%}nCurrent{%endif%} medium" role="menuitem">
+                    Sobre os ODS
+                </a>
+            </li>
+            <li class="navItem nCurrent drop">
+                <a href="{% url 'sobre-a-ferramenta' %}" class="navLink {%if '/sobre-a-ferramenta/' in request.path%}current{%else%}nCurrent{%endif%} medium" role="menuitem">
+                    Sobre a Ferramenta
+                </a>
+            </li>
+            <li class="navItem nCurrent drop">
+                <a href="{% url 'sobre-nos' %}" class="navLink {%if '/sobre-nos/' in request.path%}current{%else%}nCurrent{%endif%} medium" role="menuitem">
+                    Sobre nós
+                </a>
+            </li>
+            <li class="navItem nCurrent drop">
+                <a href="{% url 'noticias'%}" class="navLink {%if '/noticias/' in request.path%}current{%else%}nCurrent{%endif%} medium" role="menuitem">
+                    Notícias
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mobile Nav Bar -->
+
+    <div class="mNav">
+        <ul class="mNavList">
+            <li class="mNavItem">
+                <a class="mNavLink {%if request.path == '/' %}mcurrent{%endif%} large" href="{%url 'index' %}">
+                    Home
+                </a>
+            </li>
+            <li class="mNavItem">
+                <a class="mNavLink {%if '/mapeamento/' in request.path%}mcurrent{%endif%} large" href="{%url 'mapeamento' %}">
+                    Mapeamento
+                </a>
+            </li>
+            <li class="mNavItem">
+                <a class="mNavLink {%if '/sobre-os-ods/' in request.path%}mcurrent{%endif%} large" href="{%url 'sobre-ods' %}">
+                    Sobre os ODS
+                </a>
+            </li>
+            <li class="mNavItem">
+                <a class="mNavLink {%if '/sobre-a-ferramenta/' in request.path%}mcurrent{%endif%} large" href="{%url 'sobre-a-ferramenta' %}">
+                    Sobre a Ferramenta
+                </a>
+            </li>
+            <li class="mNavItem">
+                <a class="mNavLink {%if '/sobre-nos/' in request.path%}mcurrent{%endif%} large" href="{%url 'sobre-nos' %}">
+                    Sobre nós
+                </a>
+            </li>
+            <li class="mNavItem">
+                <a class="mNavLink {%if '/noticias/' in request.path%}mcurrent{%endif%} large" href="{%url 'noticias' %}">
+                    Notícias
+                </a>
+            </li>
+        </ul>
+    </div>

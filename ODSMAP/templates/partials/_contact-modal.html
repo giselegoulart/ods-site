@@ -1,0 +1,43 @@
+<!-- Contact Modal -->
+
+    <div class="modalWrapper" id="mailWrapper">
+
+        <div class="contentColumn f-j-center contactForm" id="contactForm">
+
+            <div class="contentForm w-50 m-auto">
+                <div>
+                    <span class="largeClamp lato bold mt-05 mb-1" style="display: inline-block;">Entre em contato conosco</span>
+                    <span class="float-r" style="position: relative; left: 10px; cursor: pointer;" id="contactFormClose"><i class="far fa-times-circle fa-2x m-auto"></i></span>
+                    <hr class="mb-1_5">
+                </div>
+
+                <form name="contact-form" id="contact-form" style="margin-top: -1rem;" method="POST" action="{% url 'contact' %}">
+                    {%csrf_token%}
+                    <fieldset>
+                        <label class="small Roboto bold">Nome<br>
+                            <input type="text" class="mt-05 w-100" placeholder="Seu nome" name="name" required>
+                        </label>
+
+                        <label class="small Roboto bold">Email<br>
+                            <input type="email" class="mt-05 w-100 lato" placeholder="Seu e-mail" name="email" required>
+                        </label>
+
+                        <label class="small Roboto bold contactMessage">Mensagem<br>
+                            <textarea class="mt-05 w-100 lato" placeholder="Sua mensagem" name="message" rows="10" required></textarea>
+                        </label>
+                        <!--
+                        <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+                        <input type="hidden" name="_subject" value="New submission!">
+                        <input type="hidden" name="_template" value="box"> -->
+
+                    </fieldset>
+                </form>
+
+                <div class="w-100 mb-05">
+                    <button form="contact-form" type="submit" class="w-75 m-auto mt-1" style="display: block;"><span class="lato medium">Enviar</span></button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>

@@ -1,0 +1,62 @@
+{%extends 'base.html' %}
+
+{% load static %}
+
+{%block title%}Sobre a ferramenta | {%endblock%}
+
+{%block header%}
+
+    <!-- Header -->
+
+    <div class="header nButton">
+        <div class="headerWrapper">
+            <h1 class="jumboClamp nButton">Sobre a ferramenta</h1>
+            <p class="largeClamp lato nButton">Informações sobre o projeto ODS<br>Mapeados
+        </div>
+    </div>
+{%endblock%}
+
+{%block content%}
+    <!-- Main content -->
+
+    <div class="contentEven">
+        <div class="contentColumn mixed">
+            <h1 class="xlarge">Por que usar a ferramenta</h1>
+            <p class="lato medium">
+                A ferramenta ODS Mapeados possibilita a realização do processo de mapear um ou mais textos em termos de seus graus de alinhamento com os <a href="sobre-os-ODS.html" target="_self" class="reset lato medium inline">Objetivos de Desenvolvimento Sustentável da Agenda 2030 da ONU</a> (processo este que era feito, a princípio, de forma manual e demorada) de uma maneira simples, rápida e automática.
+            </p>
+            <p class="lato medium">
+                Realizar este processo de maneira mais rápida contribui, por exemplo, para maior eficiência na gestão da relação entre o que é produzido em uma instituição de pesquisa e o alinhamento destas produções com a Agenda 2030; especialmente quando se trata de uma quantidade grande de dados a serem analisados.
+            </p>
+        </div>
+    </div>
+
+    <div class="contentOdd">
+        <div class="contentRow">
+
+            <div class="oneThird d-flex f-a-center">
+                <img src="{%static 'img/Logo_Roda_ODS_Colorido_+_Preto.png' %}" alt="imagem" class="imgMain w-100 mt-1 mb-1" style="height: 80%;">
+            </div>
+
+            <div class="vl"></div>
+
+            <div class="hr"></div>
+
+            <div class="twoThirds">
+                <h1 class="xlarge">Como funciona a ferramenta</h1>
+                <p class="lato medium">
+                    Na primeira etapa, a ferramenta trata os textos enviados por meio de um script em <a href="https://pt.wikipedia.org/wiki/Python" target="_blank" class="reset lato medium inline">Python</a> que utiliza técnicas de <a class="reset lato medium inline" href="https://pt.wikipedia.org/wiki/Processamento_de_linguagem_natural" target="_blank">processamento de linguagem natural</a>.
+                    <br>
+                    Nesta parte, são criados tokens a partir dos textos para que seja possível realizar a remoção de <a href="https://pt.wikipedia.org/wiki/Palavra_vazia" target="_blank" class="reset lato medium inline">stopwords</a>, ou seja, palavras que, neste contexto, não agregam significado às sentenças e que, portanto, podem ser ignoradas. Alguns exemplos de stopwords são: <i class="lato medium">em, um, para, é,</i> e <i class="lato medium">com.</i>
+                    <br>
+                    Após a remoção das stopwords, as palavras que compõem cada token são reduzidas à sua raiz, isso é feito para que seja possível agrupar vários tokens relacionados a uma mesma raíz.
+                    <br><br>
+                    Em seguida, o resultado deste tratamento é comparado com dados armazenados em um banco de dados, estes dados são as palavras-chave relacionadas aos 17 ODS e que também passaram pelo processo de criação de tokens e redução à raiz.
+                    <br>
+                    As palavras-chave encontradas no textos são então salvas e computadas para que as estatísticas de alinhamento sejam calculadas e retornadas ao usuário.
+                <!-- <a class="lato medium" href="sobre-os-ODS.html" target="_self">Clique aqui para mais detalhes</a> -->
+            </div>
+        </div>
+
+    </div>
+{%endblock%}

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <title>{%block title%}{%endblock title%}ODS Mapeados</title>
+
+    {% include 'partials/_head.html' %}
+
+</head>
+
+<body>
+
+    {% include 'partials/_navbar.html' %}
+
+    {%block header%}
+
+    {%endblock%}
+
+    {%block content %}
+
+    {%endblock%}
+
+    {% include 'partials/_contact-modal.html' %}
+
+    {% include 'partials/_footer.html' %}
+
+    <script>
+    
+    {% if messages %}
+        {% for message in messages %}
+        window.onload = () => {window.alert("{{message}}")}
+        {%endfor%}
+    {%endif%}
+
+    {%block extrascripts %}
+
+    {%endblock%}
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

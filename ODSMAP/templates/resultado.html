@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block title%}Resultado | {%endblock%}
+
+{%block content%}
+
+    <div class="contentEven">
+        <div class="contentColumn">
+            <h1 class="xlarge">Resultados</h1>
+            <p class="Roboto medium">
+                <img class="result-img" src="data:image/png;base64,{{heatmap}}" style="display: block; margin: 0 auto; max-width: 100%;">
+                <hr style="width: 80%; margin: 0 auto;">
+                <div class="result-btn-wrapper">
+                    <a href="data:image/png;base64,{{heatmap}}" target="_self" class="lato large inline no_decor result-btn" style="box-sizing: border-box;" download="heatmap">Baixar heatmap</a>
+                    <a href="" target="_self" class="lato large inline no_decor result-btn" style="box-sizing: border-box;" download="resultados.csv">Baixar planilha</a>
+                </div>
+            </p>
+        </div>
+    </div>
+
+{%endblock%}
+
+
+{%block extrascripts %}
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        location.reload(true);
+    }
+    const csv_file = atob(`{{csv}}`)
+    const blob = new Blob([csv_file], {type: "data:application/octet-stream;base64"})
+    const url = window.URL.createObjectURL(blob)
+    const dlnk = document.querySelector('[download="resultados.csv"]')
+    dlnk.setAttribute('href', url)
+{%endblock%}

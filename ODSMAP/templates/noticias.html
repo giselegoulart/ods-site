@@ -1,0 +1,70 @@
+{%extends 'base.html' %}
+
+{% load static %}
+
+{%block title%}Notícias | {%endblock%}
+
+{%block header%}
+
+    <!-- Header -->
+
+    <div class="header nButton">
+        <div class="headerWrapper">
+            <h1 class="jumboClamp nButton">Notícias</h1>
+            <p class="largeClamp lato nButton">Notícias e materiais autorais referentes ao projeto</p>
+        </div>
+    </div>
+
+{%endblock%}
+
+{%block content%}
+
+    <!-- Main content -->
+
+    <!-- Flex 0 - EVEN -->
+
+    <div class="contentEven">
+        <div class="contentRow">
+
+            <div class="twoThirds">
+                <a class="reset no_decor noti_link" href="https://www2.ufjf.br/noticias/2021/05/26/ferramenta-mapeia-projetos-da-ufjf-ligados-a-agenda-2030-da-onu/" target="_blank">
+                    <h1 class="large">Ferramenta mapeia projetos da UFJF ligados à Agenda 2030 da ONU</h1>
+                    <p class="lato medium no_hover">Matéria publicada no site da Universidade Federal de Juiz de Fora (UFJF) que fala sobre a motivação por trás do desenvolvimento da ferramenta, sua base de funcionamento, e sobre os impactos positivos que ela pode causar.
+                    </p>
+                </a>
+            </div>
+
+            <div class="vl"></div>
+
+            <div class="hr"></div>
+
+            <div class="oneThird d-flex f-a-center f-j-center">
+                <a class="reset no_decor h-50 w-100" style="padding: 3rem 0 !important; box-sizing: content-box;" href="https://www2.ufjf.br/noticias/2021/05/26/ferramenta-mapeia-projetos-da-ufjf-ligados-a-agenda-2030-da-onu/" target="_blank"><img src="{% static 'img/ufjf_noticias.png' %}" alt="imagem" class="imgMain invert_imgcolor w-100 h-100"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="contentOdd">
+        <div class="contentRow">
+
+            <div class="oneThird d-flex f-a-center f-j-center" style="height: fit-content;">
+                <a href="media/ods_mapeados_2021-2022.pdf" target="_blank" class="reset no_decor w-100 h-100" style="padding: 1rem 0 !important;"><img src="{% static 'img/preview_apresentacao_ODS.png' %}" alt="imagem" class="imgMain no_invert" style="width: 60%;"></a>
+            </div>
+
+            <div class="vl"></div>
+
+            <div class="hr"></div>
+
+            <div class="twoThirds">
+                <a class="reset no_decor noti_link" href="media/ods_mapeados_2021-2022.pdf" target="_blank">
+                    <h1 class="large">Ods mapeados: uma ferramenta computacional voltada à gestão acadêmica e científica para apoio e alinhamento da agenda 2030</h1>
+                    <p class="lato medium no_hover">Artigo que apresenta detalhadamente a ferramenta, sua fundamentação teórica, os processos de seu funcionamento, as tecnologias empregadas nela, e os resultados obtidos até então.
+                    </p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+{%endblock%}

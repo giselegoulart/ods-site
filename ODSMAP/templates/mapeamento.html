@@ -1,0 +1,68 @@
+{%extends 'base.html' %}
+
+{% load static %}
+
+{%block title%}Envio de arquivos | {%endblock%}
+
+{%block header%}
+
+    <!-- Header -->
+
+    <div class="header nButton auth">
+        <div class="headerWrapper auth">
+            <h1 class="jumboClamp nButton">Envio de arquivos</h1>
+        </div>
+    </div>
+
+{%endblock%}
+
+{%block content%}
+    <!-- File Upload Interface -->
+
+    <div class="contentOdd uploadWrapper">
+        <div class="wrapper">
+            <header>Selecione os arquivos a ser enviados</header>
+            <form class="upload" method="post" action="{% url 'upload' %}" id="file-upload" enctype="multipart/form-data">
+                {%csrf_token%}
+                <input class="file-input" type="file" name="file" accept=".pdf, .csv" hidden>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Clique aqui</p>
+            </form>
+            <section class="progress-area"></section>
+            <section class="uploaded-area"></section>
+            <div class="send" style="text-align: center;"><button style="cursor: pointer; margin-top: 1rem;" type="submit" form="file-upload">ENVIAR</button></div>
+            {% if url%}
+            <div style="text-align:center;margin-top:1rem">Arquivo enviado: <a href="{{url}}">{{url}}</a></div>
+            {%endif%}
+        </div>
+    </div>
+    
+    <div class="contentEven">
+        <div class="contentColumn mixed instructions" style="padding-top: 16px;">
+            <h1 class="xlarge bold text-center uline">Instruções para envio de .csv:</h1>
+            <p class="lato large">
+                Para enviar arquivos .csv para análise, deve-se certificar de que alguns requesitos sejam satisfeitos:
+                <ul class="lato medium requirements" style="margin-left: 48px;">
+                    <li>O arquivo deve seguir o padrão de Arquivo de Valores Separados por Vírgula (CSV), utilizando como separador de colunas o caracter de <b>ponto e vírgula (;)</b>.</li>
+                    <li>O arquivo deve estar em codificação <b>UTF-8</b>.</li>
+                    <li>Os cabeçalhos não devem conter caractéres especiais (como acentos).</li>
+                </ul>
+            <hr>
+            <p class="lato large" style="margin-top: 16px;">
+                Disponibilizamos também um template de arquivo .CSV que já conta com o separador correto (;) e codificação UTF-8, e que pode ser preenchido e enviado sem precisar de adaptações ou, caso necessário, utilizado como base para a adaptação de um arquivo .CSV já existente.
+            </p>
+            <a class="btn" href="{% static 'media/exemplo_entrada_ods.csv' %}" download="template_csv_ods_mapeados.csv">
+                TEMPLATE CSV
+            </a>
+        </div>
+    </div>
+
+{%endblock%}
+
+{%block extrascripts%}
+{% if download %}
+    url = window.location.href
+    window.location.href = "{{csv}}"
+    setTimeout(() => {window.location.href = url.split('resultado-pdf')[0] + "mapeamento/"}, 1000)
+{% endif %}
+{%endblock extrascripts%}
